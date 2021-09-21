@@ -1,22 +1,32 @@
 
 package hib;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @MappedSuperclass
 public class Client {
     
     @Id
     @Column(name = "Id")
-    private String id;
+    protected String id;
     
     @Column(name = "Name")
-    private String name;
+    protected String name;
     
     @Column(name = "Age")
-    private int age;
+    protected int age;
+    
+    @OneToMany(fetch = FetchType.EAGER ,mappedBy = "clientH", orphanRemoval = true)     
+    protected List<AddressH> address = new ArrayList<>();
+               
 
     public Client() {
     }
@@ -47,10 +57,22 @@ public class Client {
         this.age = age;
     }
 
+    public List<AddressH> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<AddressH> address) {
+        this.address = address;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + ", name=" + name + ", age=" + age + '}';
+        return "Client{" + "id=" + id + ", name=" + name + ", age=" + age + ", address=" + address + '}';
     }
+
+   
     
     
 }

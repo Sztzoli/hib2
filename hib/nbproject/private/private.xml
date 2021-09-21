@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hibernate.cfg.xml</file>
+            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/AddresHDao.java</file>
             <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/ClientHDao.java</file>
+            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hibernate.cfg.xml</file>
             <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/Client.java</file>
+            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/ClientHDaoBase.java</file>
+            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/AddressH.java</file>
             <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/SessionUtil.java</file>
             <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/ClientH.java</file>
+            <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/Address.java</file>
             <file>file:/C:/JAVA/JSF/hibernatecfg/hib/src/hib/Main.java</file>
         </group>
     </open-files>

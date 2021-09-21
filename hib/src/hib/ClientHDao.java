@@ -1,36 +1,30 @@
 package hib;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 import java.util.List;
-import org.hibernate.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 public class ClientHDao {
 
     
-    public static void insert(Client client) {
-        Session session = SessionUtil.getSession();
-        Transaction tx = session.beginTransaction();
-        addClient(session, client);
-        tx.commit();
-        session.close();
-    }
+    public static void insert(ClientH client) {
+        try (Session session = SessionUtil.getSession()) {
+            Transaction tx = session.beginTransaction();
+            session.save(client);
+            tx.commit();
+        }
+    }    
     
-    public static void addClient(Session session, Client client) {
-        ClientH clientH = new ClientH();
-        clientH.setId(client.getId());
-        clientH.setName(client.getName());
-        clientH.setAge(client.getAge());
-        session.save(clientH);
+    public static void delete(ClientH client) {           
+          try (Session session = SessionUtil.getSession()) {
+            Transaction tx = session.beginTransaction();
+            session.delete(client);            
+            tx.commit();
+        }
     }
+ 
     
     public static List<ClientH> getAll(){
         List<ClientH> employees;

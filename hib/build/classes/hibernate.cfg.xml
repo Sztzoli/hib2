@@ -40,12 +40,15 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/clients</property>
-    <property name="hibernate.connection.username">clients</property>
-    <property name="hibernate.connection.password">clients</property>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/clients</property>
+        <property name="hibernate.connection.username">clients</property>
+        <property name="hibernate.connection.password">clients</property>
     
-    <mapping class="hib.ClientH"/>
-  </session-factory>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+        <mapping class="hib.ClientH"/>
+        <mapping class="hib.AddressH"/>
+    </session-factory>
 </hibernate-configuration>

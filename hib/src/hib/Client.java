@@ -24,7 +24,7 @@ public class Client {
     @Column(name = "Age")
     protected int age;
     
-    @OneToMany(fetch = FetchType.EAGER ,mappedBy = "clientH", orphanRemoval = true)     
+    @OneToMany(mappedBy = "clientH", orphanRemoval = true)     
     protected List<AddressH> address = new ArrayList<>();
                
 

@@ -22,13 +22,6 @@ public class AddresHDao {
             session.remove(address);
             tx.commit();
         }
-    }
-    
-    public static void deleteByClintFk(String clientFk) {
-            try (Session session = SessionUtil.getSession()) {
-            Transaction tx = session.beginTransaction();            
-            session.creatQ
-            tx.commit();
-        }
-    }
+    }    
+ 
 }

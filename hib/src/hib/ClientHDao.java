@@ -45,4 +45,14 @@ public class ClientHDao {
          return client;
     }
     
+     public static ClientH findByIdWithAdrdess(String id) {
+        ClientH client;
+        try (Session session = SessionUtil.getSession()) {
+            Query query = session.createQuery("from ClientH c INNER JOIN fetch c.address where c.id = :id")
+                    .setParameter("id", id);
+            client = (ClientH) query.uniqueResult();
+        }
+         return client;
+    }
+    
 }

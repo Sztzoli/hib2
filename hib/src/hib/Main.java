@@ -28,9 +28,9 @@ public class Main {
         AddresHDao.insert(addressH1);
         AddresHDao.insert(addressH2);
 
-          ClientHDao.delete(client);
+        System.out.println(ClientHDao.findByIdWithAdrdess(client.getId()));
 
-        
+        ClientHDaoBase.deleteAll(client);
         
     }
          

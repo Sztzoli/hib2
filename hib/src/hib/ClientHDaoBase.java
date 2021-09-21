@@ -12,7 +12,11 @@ package hib;
 public class ClientHDaoBase extends ClientHDao{
     
     public static void deleteAll(ClientH clientH) {
-        
+        ClientH db= ClientHDao.findByIdWithAdrdess(clientH.getId());
+        db.getAddress().forEach((addres) -> {
+            AddresHDao.delete(addres);
+        });
+        ClientHDao.delete(clientH);
     }
     
 }
